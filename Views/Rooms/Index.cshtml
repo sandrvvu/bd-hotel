@@ -1,0 +1,68 @@
+﻿@model IEnumerable<HotelManagmentSytem.Models.Rooms>
+
+@{
+    ViewBag.Title = "Rooms";
+}
+
+<h2>Rooms</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "Rooms", FormMethod.Get))
+{
+    //the following are search options
+    <b> Search Option: </b>@Html.RadioButton("option", "room_id") <text>Id </text> @Html.RadioButton("option", "capacity") <text>Capacity</text>
+    @Html.RadioButton("option", "comfort_level") <text> Comfort</text> @Html.RadioButton("option", "price")<text>Price</text>
+    @Html.RadioButton("option", "all") <text>Show all</text> @Html.TextBox("search")
+    <input type="submit" name="submit" value="Search" />
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.room_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.capacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comfort_level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.is_available)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.room_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.capacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comfort_level)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.is_available)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.room_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.room_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.room_id })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,80 @@
+﻿@model HotelManagmentSytem.Models.Reservations
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Reservations</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.check_in_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.check_in_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.check_out_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.check_out_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.deposit_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.deposit_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total_amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total_amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.is_paid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.is_paid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clients.full_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clients.full_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rooms.comfort_level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rooms.comfort_level)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

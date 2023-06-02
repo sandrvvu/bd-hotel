@@ -1,0 +1,74 @@
+﻿@model HotelManagmentSytem.Models.Reservations
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reservations</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.check_in_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.check_in_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.check_out_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.check_out_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.deposit_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.deposit_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total_amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total_amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.is_paid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.is_paid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clients.full_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clients.full_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rooms.comfort_level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rooms.comfort_level)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.reservation_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
